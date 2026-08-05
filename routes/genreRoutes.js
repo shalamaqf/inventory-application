@@ -1,5 +1,6 @@
 const { Router } = require("express");
 const genreRouter = Router();
+const albumRouter = require("./albumRoutes")
 
 
 genreRouter.get("/", (req, res) => {
@@ -29,5 +30,7 @@ genreRouter.post("/genre/update-genre/:id", (req, res) => {
 genreRouter.post("/genre/deleted-genre/:id", (req, res) => {
     res.redirect("/");
 })
+
+genreRouter.use("/genre/:genre_name", albumRouter);
 
 module.exports = genreRouter;
