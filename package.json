@@ -16,5 +16,11 @@
     "url": "https://github.com/shalamaqf/inventory-application/issues"
   },
   "homepage": "https://github.com/shalamaqf/inventory-application#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "pg": "^8.22.0"
+  }
 }
