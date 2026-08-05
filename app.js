@@ -1,0 +1,30 @@
+const express = require("express");
+const app = express();
+const PORT = process.env.PORT || 3000;
+const path = require("node:path");
+
+// load env variables
+require("dotenv").config();
+
+// set framework and tools
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
+
+const assetsPath = path.join(__dirname, "public");
+app.use(express.static(assetsPath));
+
+app.use(express.urlencoded({ extended: true }));
+
+
+// set basic route for express app
+app.get("/", (req, res) => {
+    res.send("Hi!");
+})
+
+app.listen(PORT, (error) => {
+    if (error) {
+        throw error;
+    }
+
+    console.log(`Listening to port ${PORT}`);
+})
