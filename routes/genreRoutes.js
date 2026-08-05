@@ -18,8 +18,16 @@ genreRouter.get("/genre/update-genre/:id", (req, res) => {
     res.send("this is form to update genre");
 })
 
-genreRouter.get("/genre/deleted-genre/:id", (req, res) => {
-    res.send("this is delete genre page");
+genreRouter.post("/genre/add-genre", (req, res) => {
+    res.send("this is form to add genre");
+})
+
+genreRouter.post("/genre/update-genre/:id", (req, res) => {
+    res.send("this is form to update genre");
+})
+
+genreRouter.post("/genre/deleted-genre/:id", (req, res) => {
+    res.redirect("/");
 })
 
 module.exports = genreRouter;
