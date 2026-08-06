@@ -1,6 +1,6 @@
 <div class="genre-button-container">
-    <a href="/genre/update-genre/<% genre.id %>">Update</a>
-    <form action="/genre/deleted-genre/<% genre.id %>" method="post">
+    <a href="/genre/update-genre/<%= genre.id %>">Update</a>
+    <form action="/genre/deleted-genre/<%= genre.id %>" method="post">
         <input type="text" name="adminPassword" placeholder="Admin Password" required>
         <button type="submit">Delete</button>
     </form>
