@@ -3,6 +3,7 @@
         <% if (genreList) { %>
             <% genreList.forEach(genre => { %>
                 <li><%= genre.name %></li>
+                <%- include("./updateAndDeleteGenre", { genre }) %>
             <% }) %>
         <% } %>
     </ul>
