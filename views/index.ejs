@@ -1,0 +1,18 @@
+<%- include("partials/head", { title }) %>
+<body>
+    <%- include("partials/header") %>
+    <main>
+        <h1><%= title %></h1>
+        <div class="Genre List">
+            <% if (genreList) { %>
+                <ul>
+                    <% genreList.forEach(genre => { %>
+                        <li><%= genre.name %></li>
+                        <%- include("partials/updateAndDeleteGenre") %>
+                    })
+                </ul>
+            <% } %>
+        </div>
+    </main>
+    <%- include("partials/footer") %>
+</body>
