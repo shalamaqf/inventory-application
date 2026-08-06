@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3000;
 const path = require("node:path");
+const genreRouter = require("./routes/genreRoutes");
 
 // load env variables
 require("dotenv").config();
@@ -17,9 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 // set basic route for express app
-app.get("/", (req, res) => {
-    res.send("Hi!");
-})
+app.get("/", genreRouter);
 
 app.listen(PORT, (error) => {
     if (error) {
