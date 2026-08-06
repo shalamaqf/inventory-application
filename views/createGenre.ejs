@@ -1,0 +1,14 @@
+<%- include("partials/head", { title }) %>
+<body>
+    <%- include("partials/header") %>
+    <main>
+        <div class="add-genre-form-container">
+            <form action="/genre/add-genre" method="post">
+                <label for="genre">Add Genre:</label>
+                <input type="text" name="genre" id="genre" required>
+                <button type="submit">Add</button>
+            </form>
+        </div>
+    </main>
+    <%- include("partials/footer") %>
+</body>
