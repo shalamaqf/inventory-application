@@ -1,0 +1,15 @@
+<%- include("partials/head", { title }) %>
+<body>
+    <%- include("partials/header") %>
+    <main>
+        <div class="update-genre-form-container">
+            <form action="/genre/update-genre/<%= genre.id %>" method="post">
+                <label for="genre">Genre:</label>
+                <input type="text" name="genre" id="genre" value="<%= genre.name %>" required>
+                <input type="text" name="adminPassword" placeholder="Admin Password" required>
+                <button type="submit">Update</button>
+            </form>
+        </div>
+    </main>
+    <%- include("partials/footer") %>
+</body>
