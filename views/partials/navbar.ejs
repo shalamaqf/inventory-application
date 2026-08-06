@@ -1,0 +1,9 @@
+<nav>
+    <ul>
+        <% if (genreList) { %>
+            <% genreList.forEach(genre => { %>
+                <li><%= genre.name %></li>
+            <% }) %>
+        <% } %>
+    </ul>
+</nav>
