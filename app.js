@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 // set basic route for express app
-app.get("/", genreRouter);
+app.use("/", genreRouter);
 
 app.listen(PORT, (error) => {
     if (error) {
