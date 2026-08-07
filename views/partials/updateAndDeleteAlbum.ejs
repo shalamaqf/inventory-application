@@ -1,0 +1,7 @@
+<div class="album-button-container">
+    <a href="/genre/<%= genre.name %>/update-album/<%= album.id %>">Update</a>
+    <form action="/genre/<%= genre.name %>/deleted-album/<%= album.id %>" method="post">
+        <input type="text" name="adminPassword" placeholder="Admin Password" required>
+        <button type="submit">Delete</button>
+    </form>
+</div>
