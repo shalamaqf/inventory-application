@@ -1,0 +1,19 @@
+<%- include("partials/head", { title }) %>
+<body>
+    <%- include("partials/header") %>
+    <main>
+        <h1><%= title %></h1>
+        <div class="album-found-container">
+            <ul>
+                <% if (album) { %>
+                    <li> <%= album.name %></li>
+                    <li> <%= album.artist %></li>
+                    <li> <%= album.releaseYear %></li>
+                <% } else { %>
+                    <p>Album didn't exist.</p>
+                <% } %>
+            </ul>
+        </div>
+    </main>
+    <%- include("partials/footer") %>
+</body>
