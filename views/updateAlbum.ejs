@@ -1,0 +1,28 @@
+<%- include("partials/head", { title }) %>
+<body>
+    <%- include("partials/header") %>
+    <main>
+        <h1><%= title %></h1>
+        <div class="update-album-form-container">
+            <form action="/genre/<%= genre.name %>/update-album/<%= album.id %>" method="post">
+                <div class="input-field-container">
+                    <label for="album-name">Name:</label>
+                    <input type="text" name="album-name" id="album-name" value="<%= album.name %>" required>
+                </div>
+                <div class="input-field-container">
+                    <label for="artist">Artist:</label>
+                    <input type="text" name="artist" id="artist" value="<%= album.artist %>" required>
+                </div>
+                <div class="input-field-container">
+                    <label for="release-year">Release Year:</label>
+                    <input type="text" name="release-year" id="release-year" value="<%= album.releaseYear %>" required>
+                </div>
+                <div class="update-album-container">
+                    <input type="text" name="adminPassword" placeholder="Admin Password" required>
+                    <button type="submit">Update</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <%- include("partials/footer") %>
+</body>
