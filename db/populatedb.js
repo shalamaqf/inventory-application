@@ -1,4 +1,4 @@
-const { Client } = requrie("pg");
+const { Client } = require("pg");
 
 const SQL = `
     INSERT INTO genre (name) VALUES ('Uncategorized'), ('Rock'), ('Jazz');
@@ -9,3 +9,16 @@ const SQL = `
         ('Abbey Road', (SELECT id FROM artist WHERE name = 'The Beatles'), (SELECT id FROM genre WHERE name = 'Rock'), 1969),
         ('Chet', (SELECT id FROM artist WHERE name = 'Chet Baker'), (SELECT id FROM genre WHERE name = 'Jazz'), 1959);
 `
+
+async function main () {
+    console.log("seeding...");
+    const client = new Client({
+        connectionString: "postgresql://shalamaop:odinsqf@localhost:5432/album_vinyl_store",
+    });
+    await client.connect();
+    await client.query(SQL);
+    await client.end();
+    console.log("done");
+}
+
+main();
