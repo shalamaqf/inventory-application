@@ -1,0 +1,22 @@
+<%- include("partials/head", { title }) %>
+<body>
+    <%- include("partials/header") %>
+    <main>
+        <h1><%= title %></h1>
+        <div class="album-list">
+            <ul>
+                <% if (albumList) { %>
+                    <% albumList.forEach(album => { %>
+                        <li><%= album.name %>
+                        <p><%= album.artist %></p>
+                        </li>
+                        <%- include("partials/updateAndDeleteAlbum") %>
+                    <% }) %>
+                <% } else { %>
+                    <p>Album Empty.</p>
+                <% } %>
+            </ul>
+        </div>
+    </main>
+    <%- include("partials/footer") %>
+</body>
