@@ -14,3 +14,8 @@ async function updateGenre(name, id) {
     const { rows } = await pool.query("UPDATE genre SET name = $1 WHERE id = $2 RETURNING *", [name, id]);
     return rows[0];
 }
+
+async function getGenreById(id) {
+    const { rows } = await pool.query("SELECT * FROM genre WHERE id = $1", [id]);
+    return rows[0];
+}
