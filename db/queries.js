@@ -19,3 +19,8 @@ async function getGenreById(id) {
     const { rows } = await pool.query("SELECT * FROM genre WHERE id = $1", [id]);
     return rows[0];
 }
+
+async function getGenreByName(name) {
+    const { rows } = await pool.query("SELECT * FROM genre WHERE name = $1", [name]);
+    return rows[0];
+}
