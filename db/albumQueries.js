@@ -14,3 +14,9 @@ async function getAlbumByArtistAndGenre(artistId, genreId) {
     const { rows } = await pool.query("SELECT * FROM album WHERE artist_id = $1 AND genre_id = $2", [artistId, genreId])
     return rows;
 }
+
+async function addAlbum(name, artistId, genreId, releaseYear) {
+    const { rows } = await pool.query("INSERT INTO album (name, artist_id, genre_id, release_year) VALUES ($1, $2, $3, $4) RETURNING *",
+                                    [name, artistId, genreId, releaseYear]);
+    return rows[0];
+}
