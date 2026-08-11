@@ -24,3 +24,8 @@ async function getGenreByName(name) {
     const { rows } = await pool.query("SELECT * FROM genre WHERE name = $1", [name]);
     return rows[0];
 }
+
+async function deleteGenre(id) {
+    const { rows } = await pool.query("DELETE FROM genre WHERE id = $1 RETURNING *", [id]);
+    return rows[0];
+}
