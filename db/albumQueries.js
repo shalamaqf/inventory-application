@@ -9,3 +9,8 @@ async function getAlbumByNameAndGenre(name, genreId) {
     const { rows } = await pool.query("SELECT * FROM album WHERE name = $1 AND genre_id = $2", [name, genreId]);
     return rows;
 }
+
+async function getAlbumByArtistAndGenre(artistId, genreId) {
+    const { rows } = await pool.query("SELECT * FROM album WHERE artist_id = $1 AND genre_id = $2", [artistId, genreId])
+    return rows;
+}
