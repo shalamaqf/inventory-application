@@ -20,3 +20,9 @@ async function addAlbum(name, artistId, genreId, releaseYear) {
                                     [name, artistId, genreId, releaseYear]);
     return rows[0];
 }
+
+async function updateAlbum(name, artistId, genreId, releaseYear, albumId) {
+    const { rows } = await pool.query("UPDATE album SET name = $1, artist_id = $2, genre_id = $3, release_year = $4 WHERE id = $5 RETURNING *",
+                                        [name, artistId, genreId, releaseYear, albumId]);
+    return rows[0];                   
+}
