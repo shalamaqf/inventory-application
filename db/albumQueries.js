@@ -26,3 +26,8 @@ async function updateAlbum(name, artistId, genreId, releaseYear, albumId) {
                                         [name, artistId, genreId, releaseYear, albumId]);
     return rows[0];                   
 }
+
+async function deleteAlbum(albumId) {
+    const { rows } = await pool.query("DELETE FROM album WHERE id = $1 RETURNING *", [albumId]);
+    return rows[0];
+}
