@@ -31,3 +31,8 @@ async function deleteAlbum(albumId) {
     const { rows } = await pool.query("DELETE FROM album WHERE id = $1 RETURNING *", [albumId]);
     return rows[0];
 }
+
+async function updateAlbumGenre(oldGenreId, newGenreId) {
+    const { rows } = await pool.query("UPDATE album SET genre_id = $2 WHERE genre_id = $1 RETURNING *", [oldGenreId, newGenreId]);
+    return rows;
+}
