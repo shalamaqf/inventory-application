@@ -1,11 +1,11 @@
+// load env variables
+require("dotenv").config();
+
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3000;
 const path = require("node:path");
 const genreRouter = require("./routes/genreRoutes");
-
-// load env variables
-require("dotenv").config();
 
 // set framework and tools
 app.set("views", path.join(__dirname, "views"));
