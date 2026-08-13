@@ -4,9 +4,7 @@ const albumRouter = require("./albumRoutes");
 const genreControllers = require("../controllers/genreControllers")
 
 
-genreRouter.get("/", (req, res) => {
-    res.send("this is home page");
-})
+genreRouter.get("/", genreControllers.genreListGet);
 
 genreRouter.get("/genre/add-genre", (req, res) => {
     res.send("this is form to add genre");
