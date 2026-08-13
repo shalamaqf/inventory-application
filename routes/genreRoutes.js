@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const genreRouter = Router();
-const albumRouter = require("./albumRoutes")
+const albumRouter = require("./albumRoutes");
+const genreControllers = require("../controllers/genreControllers")
 
 
 genreRouter.get("/", (req, res) => {
