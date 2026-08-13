@@ -3,6 +3,7 @@
     <%- include("partials/header") %>
     <main>
         <h1><%= title %></h1>
+        <a class="add-album" href="/genre/<%= genre.name %>/add-album">Add Album</a>
         <%- include("partials/searchAlbumForm") %>
         <div class="album-list">
             <ul>
