@@ -10,7 +10,14 @@ async function addGenreGet(req, res) {
     res.render('createGenre', { title: "Add Genre" });
 }
 
+async function updateGenreGet(req, res) {
+    const genreId = req.params.id;
+    const genre = await db.getGenreById(genreId);
+    res.render('updateGenre', { title: "Update Genre", genre })
+}
+
 module.exports = {
     genreListGet,
-    addGenreGet
+    addGenreGet,
+    updateGenreGet,
 }
