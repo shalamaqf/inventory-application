@@ -5,3 +5,9 @@ async function genreListGet(req, res) {
     console.log('Genres: ', genreList);
     res.render('index', { title: "Genre List", genreList })
 }
+
+
+module.exports = {
+    genreListGet,
+    
+}
