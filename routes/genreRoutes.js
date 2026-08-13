@@ -6,9 +6,7 @@ const genreControllers = require("../controllers/genreControllers")
 
 genreRouter.get("/", genreControllers.genreListGet);
 
-genreRouter.get("/genre/add-genre", (req, res) => {
-    res.send("this is form to add genre");
-})
+genreRouter.get("/genre/add-genre", genreControllers.addGenreGet)
 
 genreRouter.get("/genre/:genre_name", (req, res) => {
     res.send("this is album page by genre");
