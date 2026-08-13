@@ -7,11 +7,9 @@ const albumControllers = require("../controllers/albumControllers");
 
 genreRouter.get("/", genreControllers.genreListGet);
 
-genreRouter.get("/genre/add-genre", genreControllers.addGenreGet)
+genreRouter.get("/genre/add-genre", genreControllers.addGenreGet);
 
-genreRouter.get("/genre/:genre_name", (req, res) => {
-    res.send("this is album page by genre");
-})
+genreRouter.get("/genre/:genre_name", albumControllers.albumListByGenreGet);
 
 genreRouter.get("/genre/update-genre/:id", genreControllers.updateGenreGet);
 
