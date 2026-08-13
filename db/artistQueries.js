@@ -9,3 +9,8 @@ async function getArtistById(id) {
     const { rows } = await pool.query("SELECT * FROM artist WHERE id = $1", [id]);
     return rows[0];
 }
+
+module.exports = {
+    getArtistById,
+    getArtistByName
+}
