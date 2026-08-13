@@ -12,7 +12,7 @@
                         <li><%= album.name %>
                         <p><%= album.artist %></p>
                         </li>
-                        <%- include("partials/updateAndDeleteAlbum") %>
+                        <%- include("partials/updateAndDeleteAlbum", { album }) %>
                     <% }) %>
                 <% } else { %>
                     <p>Album Empty.</p>
