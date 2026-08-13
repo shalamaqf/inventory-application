@@ -36,3 +36,14 @@ async function updateAlbumGenre(oldGenreId, newGenreId) {
     const { rows } = await pool.query("UPDATE album SET genre_id = $2 WHERE genre_id = $1 RETURNING *", [oldGenreId, newGenreId]);
     return rows;
 }
+
+
+module.exports = {
+    getAllAlbumsByGenre,
+    getAlbumByNameAndGenre,
+    getAlbumByArtistAndGenre,
+    addAlbum,
+    updateAlbum,
+    deleteAlbum,
+    updateAlbumGenre
+}
