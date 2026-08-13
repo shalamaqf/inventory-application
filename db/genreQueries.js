@@ -29,3 +29,13 @@ async function deleteGenre(id) {
     const { rows } = await pool.query("DELETE FROM genre WHERE id = $1 RETURNING *", [id]);
     return rows[0];
 }
+
+
+module.exports = {
+    getAllGenres,
+    addGenre,
+    updateGenre,
+    getGenreById,
+    getGenreByName,
+    deleteGenre
+}
