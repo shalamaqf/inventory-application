@@ -6,8 +6,11 @@ async function genreListGet(req, res) {
     res.render('index', { title: "Genre List", genreList })
 }
 
+async function addGenreGet(req, res) {
+    res.render('createGenre', { title: "Add Genre" });
+}
 
 module.exports = {
     genreListGet,
-    
+    addGenreGet
 }
