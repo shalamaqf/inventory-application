@@ -10,7 +10,7 @@
                     <% genreList.forEach(genre => { %>
                         <li><%= genre.name %></li>
                         <%- include("partials/updateAndDeleteGenre") %>
-                    })
+                    <% }) %>
                 </ul>
             <% } %>
         </div>
