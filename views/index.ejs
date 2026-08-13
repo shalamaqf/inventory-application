@@ -8,7 +8,7 @@
             <% if (genreList) { %>
                 <ul>
                     <% genreList.forEach(genre => { %>
-                        <li><%= genre.name %></li>
+                        <li><a href="genre/<%= genre.name %>"><%= genre.name %></a></li>
                         <%- include("partials/updateAndDeleteGenre", { genre }) %>
                     <% }) %>
                 </ul>
